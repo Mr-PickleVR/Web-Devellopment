@@ -1,10 +1,83 @@
 <!DOCTYPE HTML>
 <head>
+  <style>
+    body{
+    font-family: "Lato", sans-serif;
+    } 
+    
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+  </style> 
   <title>Passion Project</title>
 </head>
 <body>
-  <h1>Welcome to the page for our passion project</h1>
-</body>
+  
 <div id="sidebar" class="sidebar">
-  <
+  <a href="javascript:void(0)" class = "closebtn" onclick="closeNav()">X</a>
+  <a href="javascript:void(0)" class="aertbtn" onclick="alert()">Click Me!</a>
 </div>
+<div id="main">
+  <button class= 'openBTN' onclick="toggle()">click Me!</button>
+  <h1 id="name"></h1>
+  <p>some Content</p>
+</div>
+<script>
+  let state = false
+ function openNav(){
+  document.getElementById("sidebar").style.width = "250px"
+  document.getElementById("main").style.marginLeft = "250px"
+ }
+  
+ function closeNav(){
+   document.getElementById("sidebar").style.width = "0"
+   document.getElementById("main").style.marginLeft = "0"
+ }
+ function toggle(){
+  if (state){
+   openNav( 
+  }
+  else{
+     closeNav()
+  }
+   state= !state
+ }
+function alert(){
+  let person = prompt("Please enter your name","Jhon Doe")
+  if (person!=Null){
+   document.getElementById("name").innerHTML = "Welcome, " + person +"To the webpage for our Passion Project"
+  }
+  window.onload = alert()
+}
+</script> 
+</body>
